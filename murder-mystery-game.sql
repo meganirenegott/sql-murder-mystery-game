@@ -10,3 +10,13 @@
 
 -- selecting all columns from the crime scene report
 SELECT * FROM crime_scene_report;
+
+-- first query
+SELECT * 
+FROM crime_scene_report 
+WHERE date = '20180115'
+AND city = 'SQL City'
+AND type = 'murder'
+
+-- clue was in the description 
+
