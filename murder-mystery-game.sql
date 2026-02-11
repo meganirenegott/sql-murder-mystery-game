@@ -19,4 +19,19 @@ AND city = 'SQL City'
 AND type = 'murder'
 
 -- clue was in the description 
+-- Security footage shows that there were 2 witnesses.  The first witness lives at the last house
+-- on "Northwestern Dr" . The second witness, named Annabel, lives somewhere on "Franklin Ave"
 
+-- clue 2
+SELECT *
+FROM person
+WHERE address_street_name = 'Franklin Ave' 
+AND name LIKE 'Annabel%'
+
+-- result 
+id = 16371
+name = Annabel Miller
+license_id = 490173
+address_number = 103
+address_street_name = Franklin Ave
+ssn = 318771143
