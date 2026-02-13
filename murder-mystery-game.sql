@@ -267,3 +267,101 @@ SELECT *
 FROM interview
 WHERE person_id = 90700;
 -- no results found
+
+
+-- Went back to killer's interview, realized I accidentally seached an age range, not height range, new results
+
+SELECT * 
+FROM drivers_license
+WHERE height BETWEEN 65 AND 67 AND
+hair_color = 'red' 
+AND car_make = 'Tesla'
+AND car_model = 'Model S';
+
+
+-- results 3 suspects
+-- suspect 1 
+id = 202298
+age = 68
+height = 66
+eye_color = green 
+hair_color = red
+gender = female
+plate_number = 500123
+car_make = Tesla
+car_model = model s
+
+-- suspect 2
+
+id = 291182
+age = 65
+height = 66
+eye_color = blue
+hair_color = red
+gender = female
+plate_number = 08CM64
+car_make = Tesla
+car_model = model s
+
+-- suspect 3 
+id = 918773
+age = 48
+height = 66
+eye_color = black
+hair_color = red
+gender = female
+plate_number = 917UU3
+car_make = Tesla
+car_model = model s
+
+-- person identification query
+-- suspect 1
+id = 99716
+name = 'Miranda Priestly'
+license_id = 202298
+address_number = 1883
+address_street_name = Golden Ave 
+ssn = 987756388
+
+-- suspect 2 
+-- regina george eliminated
+
+-- suspect 3
+id = 78881
+name = Red Korb
+license = 918773
+address_number = 107
+address_street_name = Camerata Dr
+ssn = 961388910
+
+-- query income check 
+SELECT * 
+FROM income 
+WHERE ssn = 961388910
+
+-- suspect 1
+ssn =  987756388
+income = 310000
+
+-- suspect 3
+ssn = 961388910
+income = 278000
+
+-- wealth check is inconclusive, checking facebook events
+
+-- query facebook_event_checkin
+SELECT * 
+FROM facebook_event_checkin
+WHERE person_id = 99716
+
+-- results suspect 1
+person_id = 99716
+event_id = 1143
+event_name = SQL Symphony Concert
+date 20171206
+
+-- attended 3x, pretty sure this is the mastermind, gonna run the other suspect too 
+
+-- suspect 3, no data returned 
+
+-- Mastermind is confirmed to be Miranda Priestly!!!
