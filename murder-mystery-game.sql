@@ -168,3 +168,44 @@ license_id = 664760
 address_number = 312
 address_street_name = Phi St
 ssn = 137882671
+
+-- query 11 (Jeremy Bowers gym membership)
+ELECT *
+FROM get_fit_now_member
+WHERE person_id = 67318;
+
+-- result
+id = 48Z55
+person_id = 67318
+name = Jeremy Bowers
+membership_start_date = 201601101
+membership_status = gold
+
+-- query 12 (gym membership for Tushar)
+SELECT *
+FROM get_fit_now_member
+WHERE person_id = 51739;
+
+-- result 
+-- no membership found
+
+-- query 13 (jeremy check in data)
+SELECT *
+FROM get_fit_now_check_in
+WHERE membership_id = '48Z55';
+
+-- results
+memebership id = 48Z55
+check_in_date = 20180109
+check_in_time = 1530
+check_out_time = 1700;
+
+-- solution check
+INSERT INTO solution VALUES (1, 'Jeremy Bowers');
+SELECT value FROM solution;
+
+-- Congrats, you found the murderer! But wait, there's more... 
+-- If you think you're up for a challenge, try querying the interview transcript 
+-- of the murderer to find the real villain behind this crime. If you feel especially confident 
+-- in your SQL skills, try to complete this final step with no more than 2 queries. Use this same
+--  INSERT statement with your new suspect to check your answer.
