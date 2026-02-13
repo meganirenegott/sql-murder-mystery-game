@@ -103,4 +103,68 @@ transcript = 'I heard a gunshot and then saw a man run out. He had a "Get Fit No
 number on the bag started with "48Z" Only gold members have those bags. The man got into a car with a plate 
 that included "H42W"'
 
--- 
+-- query 8 drivers liscence search from Morty Interview Clues
+
+SELECT *
+FROM drivers_license 
+WHERE plate_number LIKE '%H42W%'
+
+-- results (3, 2 men 1 woman)
+-- woman liscence match, doesn't fit witness description based on gender
+id = 183779
+age = 21
+height = 65
+eye_color = blue
+hair_color= blonde
+gender = female
+plate_number = H42WDX
+car_make = Toyota
+car_model = Prius
+
+-- male witness suspect 1 (Jeremy Bowers)
+id = 423327
+age = 30
+height = 70
+eye_color = brown
+hair_color= brown
+gender = male
+plate_number = OH42W2
+car_make = Chevrolet
+car_model = Spark LS
+
+-- male suspect 2 (Tushar Chandra)
+id = 664760
+age = 21
+height = 71
+eye_color = black
+hair_color= black
+gender = male
+plate_number = 4H42WR
+car_make = Nissan
+car_model = Altima
+
+-- query 9 (suspect 1 by person/license_id)
+SELECT *
+FROM person
+WHERE license_id = 423327;
+
+-- result
+id = 67318
+name = Jeremy Bowers
+license_id = 423327
+address_number = 530
+address_street = Washingto Pl, APT 3A
+ssn = 8715339279
+
+-- query 9 (suspect 2 by person/license_id)
+SELECT *
+FROM person
+WHERE license_id = 664760;
+
+-- result 
+id = 51739
+name = Tushar Chandra
+license_id = 664760
+address_number = 312
+address_street_name = Phi St
+ssn = 137882671
