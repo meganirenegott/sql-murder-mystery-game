@@ -16,7 +16,7 @@ SELECT *
 FROM crime_scene_report 
 WHERE date = '20180115'
 AND city = 'SQL City'
-AND type = 'murder'
+AND type = 'murder';
 
 -- clue was in the description 
 -- Security footage shows that there were 2 witnesses.  The first witness lives at the last house
@@ -26,7 +26,7 @@ AND type = 'murder'
 SELECT *
 FROM person
 WHERE address_street_name = 'Franklin Ave' 
-AND name LIKE 'Annabel%'
+AND name LIKE 'Annabel%';
 
 -- result 
 id = 16371
@@ -55,7 +55,7 @@ car_model = Yaris
 SELECT * 
 FROM person
 WHERE address_street_name = 'Northwestern Dr'
-ORDER BY address_number DESC
+ORDER BY address_number DESC;
 
 -- result person id for Morty
 id = 14887
@@ -70,7 +70,7 @@ ssn = 111564949
 
 SELECT *
 FROM drivers_license
-WHERE id = 118009
+WHERE id = 118009;
               
 -- result
 id = 118009
@@ -107,7 +107,7 @@ that included "H42W"'
 
 SELECT *
 FROM drivers_license 
-WHERE plate_number LIKE '%H42W%'
+WHERE plate_number LIKE '%H42W%';
 
 -- results (3, 2 men 1 woman)
 -- woman liscence match, doesn't fit witness description based on gender
@@ -209,3 +209,61 @@ SELECT value FROM solution;
 -- of the murderer to find the real villain behind this crime. If you feel especially confident 
 -- in your SQL skills, try to complete this final step with no more than 2 queries. Use this same
 --  INSERT statement with your new suspect to check your answer.
+
+-- BONUS
+SELECT * 
+FROM interview
+WHERE person_id = 67318;
+
+-- result
+person_id = 67318
+transcript = "I was hired by a woman a lot of money.  I don't know her name, but I know she's around
+65-67.  She has red hair and she drives a Tesla Model S.  I know that she attended the SQL Symphony Concert
+3x in December 2017"
+
+-- bonus query
+SELECT * 
+FROM drivers_license
+WHERE age BETWEEN 65 AND 67 AND
+hair_color = 'red' 
+AND car_make = 'Tesla';
+
+-- result 
+id = 291182
+age = 65
+height = 66
+eye_color = blue
+hair_color = red
+gender = female
+plate_number = 08CM64
+car_make = Tesla
+car_model = Model S
+
+-- Bonus Query 2 person identification from driverse license
+
+SELECT * 
+FROM person
+WHERE license_id = 291182;
+
+-- result
+
+id = 90700
+name = 'Regina George'
+license_id = 291182
+address_number = 322
+address_street = 'Maple Ave'
+ssn = '337169072'
+
+-- not the killer, back to searching
+
+SELECT *
+FROM income
+WHERE ssn = '337169072'
+              
+-- result: no income found hmmmm
+
+-- checked to see if regina is in the interview
+SELECT *
+FROM interview
+WHERE person_id = 90700;
+-- no results found
