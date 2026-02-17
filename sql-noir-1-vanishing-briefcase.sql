@@ -44,3 +44,17 @@ id = 183
 name = Vincent Malone
 attire = trench coat
 scar = left cheek 
+
+-- query
+SELECT * FROM interviews WHERE suspect_id = 3;
+
+-- result
+suspect_id = 3
+transcript = null
+
+-- query
+SELECT * FROM interviews WHERE suspect_id = 183;
+
+result
+suspect_id = 183
+transcript = "I wasn't gonna steal it but I did"
