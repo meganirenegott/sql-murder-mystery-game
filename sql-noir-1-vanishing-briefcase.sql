@@ -58,3 +58,5 @@ SELECT * FROM interviews WHERE suspect_id = 183;
 result
 suspect_id = 183
 transcript = "I wasn't gonna steal it but I did"
+
+-- culprit is Vincent Malone
