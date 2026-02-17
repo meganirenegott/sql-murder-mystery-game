@@ -28,3 +28,48 @@ clue = I saw a man wearing a red bandana rushing out of the store
 id = 75
 crime_scene_id = 65 
 clue = The main thing I remember is that he had a distinctive gold watch on his wrist
+
+-- query
+
+SELECT * FROM suspects
+WHERE id = 28;
+
+-- result
+-- id = 28
+-- name = Javier Soto
+-- bandana_color = grey
+-- accessory = leather jacket
+
+-- query
+
+SELECT * FROM suspects
+WHERE id = 75;
+
+-- result
+
+-- id = 75
+-- name = Jorge Vega
+-- bandana_color = green
+-- accessory = gold ring
+
+-- query
+SELECT * FROM suspects
+WHERE bandana_color = 'red' AND accessory = 'gold watch';
+
+-- result
+-- id = 35
+-- name = tony ramirez
+-- bandana_color = red
+-- accessory = gold watch 
+
+-- id = 44
+-- name = Mickey Riveria
+-- bandana_color = red
+-- accessory = gold watch 
+
+-- id = 35
+-- name = Rico Delgado
+-- bandana_color = red
+-- accessory = gold watch 
+
+-- query
