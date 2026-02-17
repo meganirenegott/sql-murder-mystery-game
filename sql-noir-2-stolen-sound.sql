@@ -67,9 +67,31 @@ WHERE bandana_color = 'red' AND accessory = 'gold watch';
 -- bandana_color = red
 -- accessory = gold watch 
 
--- id = 35
+-- id = 97
 -- name = Rico Delgado
 -- bandana_color = red
 -- accessory = gold watch 
 
 -- query
+SELECT * FROM interviews
+WHERE suspect_id = 35;
+
+-- result 
+-- suspect_id = 35
+-- transcript = I wasn't anywhere near West Hollywood Records that night
+
+SELECT * FROM interviews
+WHERE suspect_id = 44;
+
+-- result
+-- suspect_id = 44
+-- transcript = I was busy with my music career; I have nothing to do with this theft
+
+SELECT * FROM interviews
+WHERE suspect_id = 97;
+
+-- result
+-- -- suspect_id = 97
+-- transcript = I couldn't help it, I snapped and took the record
+
+The theif was suspect 97, Rico Delgado
