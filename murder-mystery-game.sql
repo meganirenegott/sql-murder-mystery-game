@@ -337,7 +337,7 @@ ssn = 961388910
 -- query income check 
 SELECT * 
 FROM income 
-WHERE ssn = 961388910
+WHERE ssn = 961388910;
 
 -- suspect 1
 ssn =  987756388
